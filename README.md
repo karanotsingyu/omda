@@ -22,6 +22,20 @@ pip install -e .
 
 if you want to install a it in editable mode (i.e. setuptools “develop mode”; which may be more useful at the current developing stage).
 
+### Recommendation: `uv`
+
+Run the following command at the root directory (containing `pyproject.toml`)
+
+```
+uv pip install -e .
+```
+
+At the directory of specific analysis demo:
+
+```
+uv run run.py
+```
+
 ## Background and Motivation
 
 1. Tsing-Yu (@karanotsingyu) initially wrote the codes during the course "OMDA001" developed by @ouyangzhiping and @OpenMindClub. These codes implemented the ROC and EWM algorithms to address specific tasks required in the course.

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "omda"
+version = "0.1.1"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.2.3",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2.3",
+    "scipy>=1.15.1",
+    "tabulate>=0.9.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/omda"]
+
+[tool.hatch.build.targets.sdist]
+packages = ["src/omda"]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+]

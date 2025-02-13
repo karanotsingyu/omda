@@ -1,15 +1,19 @@
+from pathlib import Path
+
 import pandas as pd
 
 import omda as da
 
+DATA_DIR = Path(__file__).parent
+
 # round 1
 
-OPTIONS_DIR = 'options_v1.xlsx'
-PREF_DIR = 'pref_v1.xlsx'
+OPTIONS_PATH_1 = DATA_DIR / 'options_v1.xlsx'
+PREFERENCE_PATH_1 = DATA_DIR / 'pref_v1.xlsx'
 
-options_1 = pd.read_excel(OPTIONS_DIR, index_col=0)
+options_1 = pd.read_excel(OPTIONS_PATH_1, index_col=0)
 pref_1 = da.Preference(
-    PREF_DIR,
+    PREFERENCE_PATH_1,
     property_name_col="Property",
     monotonicity_col="Monotonicity",
     property_order_col="Order",
@@ -23,12 +27,12 @@ print("Round 1 analysis done.\n\n")
 
 # round 2
 
-OPTIONS_DIR = 'options_v2.xlsx'
-PREF_DIR = 'pref_v2.xlsx'
+OPTIONS_PATH_2 = DATA_DIR / 'options_v2.xlsx'
+PREFERENCE_PATH_2 = DATA_DIR / 'pref_v2.xlsx'
 
-options_2 = pd.read_excel(OPTIONS_DIR, index_col=0)
+options_2 = pd.read_excel(OPTIONS_PATH_2, index_col=0)
 pref_2 = da.Preference(
-    PREF_DIR,
+    PREFERENCE_PATH_2,
     property_name_col="Property",
     monotonicity_col="Monotonicity",
     property_order_col="Order",
